@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications | Global Kids</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="management-page">
+
+<div class="management-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="management-sidebar">
+
+        <div class="management-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <h2>Global Kids</h2>
+                <span>Management</span>
+            </div>
+        </div>
+
+        <div class="management-profile">
+            <div class="management-avatar">M</div>
+            <div>
+                <strong>Management</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+        <nav class="management-nav">
+
+            <a href="dashboard.html"><span>⌂</span> Dashboard</a>
+            <a href="teacher.html"><span>👨‍🏫</span> Teachers</a>
+            <a href="student.html"><span>🎓</span> Students</a>
+            <a href="class.html"><span>🏫</span> Classes</a>
+            <a href="parents.html"><span>👨‍👩‍👧</span> Parents</a>
+            <a href="attendence.html"><span>📋</span> Attendance</a>
+            <a href="issues.html"><span>⚠</span> Issues</a>
+            <a href="permissions.html"><span>🔐</span> Permissions</a>
+            <a href="notifications.html" class="management-active">
+                <span>🔔</span> Notifications
+            </a>
+            <a href="reports.html"><span>📊</span> Reports</a>
+            <a href="settings.html"><span>⚙</span> Settings</a>
+            <a href="profile.html"><span>👤</span> Profile</a>
+
+        </nav>
+
+        <a href="../login.html" class="management-logout">
+            <span>↪</span> Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="management-main">
+
+        <!-- TOP BAR -->
+        <header class="management-topbar">
+
+            <div>
+                <span class="management-page-label">Management</span>
+                <h1>Notifications</h1>
+            </div>
+
+            <div class="management-top-right">
+
+                <button class="management-notification" onclick="showNotifications()">
+                    🔔
+                    <span>0</span>
+                </button>
+
+                <div class="management-user">
+                    <div class="management-user-avatar">M</div>
+                    <div>
+                        <strong>Management</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="management-content">
+
+            <div class="notification-management-heading">
+
+                <div>
+                    <h2>Notification Center</h2>
+                    <p>Send and manage important school notifications.</p>
+                </div>
+
+                <button class="notification-send-btn" onclick="openNotificationModal()">
+                    + Send Notification
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+            <div class="management-stats">
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">🔔</div>
+                    <div>
+                        <span>Total Notifications</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">📤</div>
+                    <div>
+                        <span>Sent</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">📨</div>
+                    <div>
+                        <span>Unread</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">👥</div>
+                    <div>
+                        <span>Recipients</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+            <div class="notification-management-toolbar">
+
+                <div class="notification-search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="notificationSearch"
+                        placeholder="Search notifications..."
+                    >
+                </div>
+
+                <select id="notificationAudience">
+                    <option value="">All Recipients</option>
+                    <option value="teachers">Teachers</option>
+                    <option value="parents">Parents</option>
+                    <option value="students">Students</option>
+                    <option value="management">Management</option>
+                    <option value="everyone">Everyone</option>
+                </select>
+
+                <select id="notificationType">
+                    <option value="">All Types</option>
+                    <option value="general">General</option>
+                    <option value="academic">Academic</option>
+                    <option value="attendance">Attendance</option>
+                    <option value="event">Event</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+
+                <button class="notification-filter-btn" onclick="filterNotifications()">
+                    Filter
+                </button>
+
+            </div>
+
+
+            <!-- EMPTY STATE -->
+            <div class="notification-empty-large">
+
+                <div class="notification-empty-icon">
+                    🔔
+                </div>
+
+                <h3>No Notifications Yet</h3>
+
+                <p>
+                    Notifications sent by management will appear here.
+                    You currently have no notifications.
+                </p>
+
+                <button onclick="openNotificationModal()">
+                    + Send First Notification
+                </button>
+
+            </div>
+
+
+            <!-- NOTIFICATION GUIDELINES -->
+            <div class="management-card notification-guidelines">
+
+                <div class="management-card-heading">
+                    <div>
+                        <h3>Notification Guidelines</h3>
+                        <p>Use notifications to keep the school community informed.</p>
+                    </div>
+                </div>
+
+                <div class="notification-guideline-grid">
+
+                    <div class="notification-guideline">
+                        <div>📢</div>
+                        <section>
+                            <strong>General Updates</strong>
+                            <span>Share important school announcements.</span>
+                        </section>
+                    </div>
+
+                    <div class="notification-guideline">
+                        <div>📚</div>
+                        <section>
+                            <strong>Academic</strong>
+                            <span>Notify users about academic activities.</span>
+                        </section>
+                    </div>
+
+                    <div class="notification-guideline">
+                        <div>📋</div>
+                        <section>
+                            <strong>Attendance</strong>
+                            <span>Send attendance-related reminders.</span>
+                        </section>
+                    </div>
+
+                    <div class="notification-guideline">
+                        <div>🎉</div>
+                        <section>
+                            <strong>Events</strong>
+                            <span>Inform students and parents about events.</span>
+                        </section>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="management-footer">
+            © 2026 Global Kids. All rights reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- SEND NOTIFICATION MODAL -->
+<div class="management-modal" id="notificationModal">
+
+    <div class="management-modal-content">
+
+        <button class="management-modal-close" onclick="closeNotificationModal()">
+            ×
+        </button>
+
+        <div class="management-modal-icon">
+            🔔
+        </div>
+
+        <h2>Send Notification</h2>
+
+        <p>
+            Create a notification for the selected users.
+        </p>
+
+        <form id="notificationForm">
+
+            <div class="notification-form-group">
+
+                <label>Notification Title</label>
+
+                <input
+                    type="text"
+                    id="notificationTitle"
+                    placeholder="Enter notification title"
+                    required
+                >
+
+            </div>
+
+
+            <div class="notification-form-group">
+
+                <label>Recipients</label>
+
+                <select id="notificationRecipient" required>
+
+                    <option value="">Select Recipients</option>
+                    <option value="Teachers">Teachers</option>
+                    <option value="Parents">Parents</option>
+                    <option value="Students">Students</option>
+                    <option value="Management">Management</option>
+                    <option value="Everyone">Everyone</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="notification-form-group">
+
+                <label>Notification Type</label>
+
+                <select id="notificationCategory" required>
+
+                    <option value="">Select Type</option>
+                    <option value="General">General</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Attendance">Attendance</option>
+                    <option value="Event">Event</option>
+                    <option value="Urgent">Urgent</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="notification-form-group">
+
+                <label>Message</label>
+
+                <textarea
+                    id="notificationMessage"
+                    rows="5"
+                    placeholder="Write your notification..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="management-modal-buttons">
+
+                <button
+                    type="button"
+                    class="management-cancel-btn"
+                    onclick="closeNotificationModal()"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="notification-submit-btn"
+                >
+                    Send Notification
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openNotificationModal() {
+    document.getElementById("notificationModal").classList.add("show");
+}
+
+function closeNotificationModal() {
+    document.getElementById("notificationModal").classList.remove("show");
+}
+
+function showNotifications() {
+    alert("You have 0 new notifications.");
+}
+
+function filterNotifications() {
+
+    const search = document.getElementById("notificationSearch").value.trim();
+    const audience = document.getElementById("notificationAudience").value;
+    const type = document.getElementById("notificationType").value;
+
+    if (search || audience || type) {
+        alert("No notifications found.");
+    } else {
+        alert("There are no notifications to display.");
+    }
+}
+
+document.getElementById("notificationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const title = document.getElementById("notificationTitle").value.trim();
+    const recipient = document.getElementById("notificationRecipient").value;
+    const category = document.getElementById("notificationCategory").value;
+    const message = document.getElementById("notificationMessage").value.trim();
+
+    if (!title || !recipient || !category || !message) {
+        alert("Please fill in all the fields.");
+        return;
+    }
+
+    alert(
+        "Notification sent successfully!\n\n" +
+        "Title: " + title +
+        "\nRecipients: " + recipient +
+        "\nType: " + category
+    );
+
+    document.getElementById("notificationForm").reset();
+    closeNotificationModal();
+
+});
+
+window.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("notificationModal");
+
+    if (event.target === modal) {
+        closeNotificationModal();
+    }
+
+});
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

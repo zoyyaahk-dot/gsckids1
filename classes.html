@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes | Global Kids</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="teacher-page">
+
+<aside class="teacher-sidebar">
+
+    <div class="teacher-brand">
+        <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+
+        <div>
+            <strong>GLOBAL KIDS</strong>
+            <span>Teacher Portal</span>
+        </div>
+    </div>
+
+    <div class="teacher-profile">
+        <div class="teacher-avatar">👩‍🏫</div>
+
+        <div>
+            <strong>Teacher</strong>
+            <span>Faculty Member</span>
+        </div>
+    </div>
+
+    <nav class="teacher-nav">
+
+        <a href="dashboard.html">
+            <span>▦</span>
+            Dashboard
+        </a>
+
+        <a href="attendence.html">
+            <span>✓</span>
+            Attendance
+        </a>
+
+        <a href="student.html">
+            <span>👥</span>
+            Students
+        </a>
+
+        <a href="class.html" class="teacher-active">
+            <span>▤</span>
+            Classes
+        </a>
+
+        <a href="issues.html">
+            <span>⚠</span>
+            Issues
+        </a>
+
+        <a href="communication.html">
+            <span>✉</span>
+            Communication
+        </a>
+
+        <a href="reports.html">
+            <span>▥</span>
+            Reports
+        </a>
+
+        <a href="profile.html">
+            <span>⚙</span>
+            Profile
+        </a>
+
+    </nav>
+
+    <a href="../login.html" class="teacher-logout">
+        <span>↪</span>
+        Logout
+    </a>
+
+</aside>
+
+
+<main class="teacher-main">
+
+    <header class="teacher-topbar">
+
+        <div>
+            <span class="teacher-page-label">TEACHER PORTAL</span>
+            <h1>Classes</h1>
+        </div>
+
+        <div class="teacher-top-right">
+
+            <button class="teacher-notification"
+                    onclick="showNotifications()">
+                🔔
+                <span>0</span>
+            </button>
+
+            <div class="teacher-user">
+
+                <div class="teacher-user-avatar">T</div>
+
+                <div>
+                    <strong>Teacher</strong>
+                    <span>Faculty Member</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="teacher-content">
+
+        <!-- WELCOME -->
+
+        <div class="teacher-welcome">
+
+            <div class="teacher-welcome-icon">
+                📚
+            </div>
+
+            <div>
+                <h2>My Classes</h2>
+
+                <p>
+                    View your assigned classes and manage classroom information.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CLASS STATS -->
+
+        <div class="teacher-stats">
+
+            <div class="teacher-stat">
+
+                <div class="teacher-stat-icon">
+                    📚
+                </div>
+
+                <div>
+                    <span>Total Classes</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat green-stat">
+
+                <div class="teacher-stat-icon">
+                    👥
+                </div>
+
+                <div>
+                    <span>Total Students</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat pink-stat">
+
+                <div class="teacher-stat-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Attendance</span>
+                    <strong>0%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat yellow-stat">
+
+                <div class="teacher-stat-icon">
+                    ⚠
+                </div>
+
+                <div>
+                    <span>Issues</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLASS LIST -->
+
+        <div class="teacher-card">
+
+            <div class="teacher-card-heading">
+
+                <div>
+                    <h2>Assigned Classes</h2>
+
+                    <p>
+                        Classes assigned to you will appear here.
+                    </p>
+                </div>
+
+                <button class="teacher-primary-btn"
+                        onclick="requestClass()">
+                    + Request Class
+                </button>
+
+            </div>
+
+
+            <div class="teacher-empty">
+
+                <div class="teacher-empty-icon">
+                    📚
+                </div>
+
+                <h3>No Classes Assigned</h3>
+
+                <p>
+                    You currently have no classes assigned.
+                    Assigned classes will appear here once they are added by management.
+                </p>
+
+                <button class="teacher-primary-btn"
+                        onclick="requestClass()">
+                    Request Class Assignment
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CLASS OVERVIEW -->
+
+        <div class="teacher-card">
+
+            <div class="teacher-card-heading">
+
+                <div>
+                    <h2>Class Overview</h2>
+
+                    <p>
+                        Overview of your classroom information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="class-overview-grid">
+
+                <div class="class-overview-box">
+
+                    <div class="class-overview-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>Students</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="class-overview-box">
+
+                    <div class="class-overview-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <span>Present Today</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="class-overview-box">
+
+                    <div class="class-overview-icon">
+                        ⚠
+                    </div>
+
+                    <div>
+                        <span>Issues</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="class-overview-box">
+
+                    <div class="class-overview-icon">
+                        📊
+                    </div>
+
+                    <div>
+                        <span>Performance</span>
+                        <strong>0%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="teacher-footer">
+        © 2026 Global Kids. All Rights Reserved.
+    </footer>
+
+</main>
+
+
+<script>
+
+function showNotifications() {
+    alert("You have 0 new notifications.");
+}
+
+function requestClass() {
+    alert("Class assignment request will be sent to management once the management system is connected.");
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

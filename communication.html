@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher - Communication</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="teacher-page">
+
+<div class="teacher-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="teacher-sidebar">
+
+        <div class="teacher-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Teacher Portal</small>
+            </div>
+        </div>
+
+        <div class="teacher-profile">
+            <div class="teacher-avatar">T</div>
+            <div>
+                <strong>Teacher</strong>
+                <small>Faculty</small>
+            </div>
+        </div>
+
+        <nav class="teacher-nav">
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+            <a href="class.html">🏫 <span>Classes</span></a>
+            <a href="issues.html">⚠️ <span>Issues</span></a>
+
+            <a href="communication.html" class="teacher-active">
+                💬 <span>Communication</span>
+            </a>
+
+            <a href="reports.html">📊 <span>Reports</span></a>
+            <a href="profile.html">👤 <span>Profile</span></a>
+        </nav>
+
+        <a href="../login.html" class="teacher-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="teacher-main">
+
+        <!-- TOPBAR -->
+        <header class="teacher-topbar">
+
+            <div>
+                <span class="teacher-page-label">TEACHER PORTAL</span>
+                <h1>Communication</h1>
+            </div>
+
+            <div class="teacher-top-right">
+
+                <div class="teacher-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="teacher-user">
+                    <div class="teacher-user-avatar">T</div>
+                    <span>Teacher</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="teacher-content">
+
+            <div class="teacher-welcome">
+
+                <div class="teacher-welcome-icon">
+                    💬
+                </div>
+
+                <div>
+                    <h2>Parent Communication</h2>
+                    <p>
+                        Send important messages and updates to parents.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+            <div class="teacher-stats">
+
+                <div class="teacher-stat">
+                    <div class="teacher-stat-icon">📨</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Messages Sent</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat green-stat">
+                    <div class="teacher-stat-icon">✓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Delivered</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat pink-stat">
+                    <div class="teacher-stat-icon">👨‍👩‍👧</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Parents Contacted</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat yellow-stat">
+                    <div class="teacher-stat-icon">🔔</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Notifications</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- SEND MESSAGE -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <h2>Send Message</h2>
+                        <p>Send a message to a student's parent.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="communication-form">
+
+                    <label for="student">
+                        Student
+                    </label>
+
+                    <select id="student">
+                        <option value="">Select Student</option>
+                    </select>
+
+                    <small class="communication-help">
+                        No students are currently registered.
+                    </small>
+
+
+                    <label for="messageType">
+                        Message Type
+                    </label>
+
+                    <select id="messageType">
+                        <option value="">Select Message Type</option>
+                        <option>Attendance</option>
+                        <option>Academic</option>
+                        <option>Behaviour</option>
+                        <option>General Notice</option>
+                        <option>Other</option>
+                    </select>
+
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Write your message here..."
+                    ></textarea>
+
+
+                    <button
+                        type="button"
+                        class="teacher-primary-btn"
+                        onclick="sendMessage()">
+                        📨 Send Message
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE HISTORY -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <h2>Message History</h2>
+                        <p>Your previously sent messages will appear here.</p>
+                    </div>
+
+                    <span class="communication-count">
+                        0 Messages
+                    </span>
+
+                </div>
+
+
+                <div class="teacher-empty">
+
+                    <div class="teacher-empty-icon">
+                        💬
+                    </div>
+
+                    <h3>No Messages Sent</h3>
+
+                    <p>
+                        Your communication history is currently empty.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTE -->
+            <div class="teacher-note">
+
+                <div class="teacher-note-icon">💡</div>
+
+                <div>
+                    <strong>Parent Communication</strong>
+                    <p>
+                        Important student-related information can be
+                        communicated to the respective parents through this section.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="teacher-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function sendMessage() {
+
+    const student =
+        document.getElementById("student").value;
+
+    const messageType =
+        document.getElementById("messageType").value;
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if (student === "") {
+        alert("No student is currently registered. Please add a student first.");
+        return;
+    }
+
+    if (messageType === "") {
+        alert("Please select a message type.");
+        return;
+    }
+
+    if (message === "") {
+        alert("Please enter your message.");
+        return;
+    }
+
+    alert("Message sent successfully.");
+
+    document.getElementById("message").value = "";
+
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher - Reports</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="teacher-page">
+
+<div class="teacher-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="teacher-sidebar">
+
+        <div class="teacher-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Teacher Portal</small>
+            </div>
+        </div>
+
+        <div class="teacher-profile">
+            <div class="teacher-avatar">T</div>
+            <div>
+                <strong>Teacher</strong>
+                <small>Faculty</small>
+            </div>
+        </div>
+
+        <nav class="teacher-nav">
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+            <a href="class.html">🏫 <span>Classes</span></a>
+            <a href="issues.html">⚠️ <span>Issues</span></a>
+            <a href="communication.html">💬 <span>Communication</span></a>
+            <a href="reports.html" class="teacher-active">📊 <span>Reports</span></a>
+            <a href="profile.html">👤 <span>Profile</span></a>
+        </nav>
+
+        <a href="../login.html" class="teacher-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="teacher-main">
+
+        <!-- TOP BAR -->
+        <header class="teacher-topbar">
+
+            <div>
+                <span class="teacher-page-label">TEACHER PORTAL</span>
+                <h1>Reports</h1>
+            </div>
+
+            <div class="teacher-top-right">
+
+                <div class="teacher-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="teacher-user">
+                    <div class="teacher-user-avatar">T</div>
+                    <span>Teacher</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="teacher-content">
+
+            <div class="teacher-welcome">
+
+                <div class="teacher-welcome-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h2>Reports & Analytics</h2>
+                    <p>
+                        View attendance, student and classroom reports.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- REPORT STATS -->
+            <div class="teacher-stats">
+
+                <div class="teacher-stat">
+                    <div class="teacher-stat-icon">👨‍🎓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Students</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat green-stat">
+                    <div class="teacher-stat-icon">📋</div>
+                    <div>
+                        <strong>0%</strong>
+                        <span>Attendance</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat pink-stat">
+                    <div class="teacher-stat-icon">🏫</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Classes</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat yellow-stat">
+                    <div class="teacher-stat-icon">⚠️</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Issues</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- REPORT OPTIONS -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <h2>Generate Report</h2>
+                        <p>Select the type of report you want to view.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="report-options">
+
+                    <button class="report-option" onclick="generateReport('Attendance')">
+                        <span>📋</span>
+                        <strong>Attendance Report</strong>
+                        <small>View student attendance records</small>
+                    </button>
+
+                    <button class="report-option" onclick="generateReport('Student')">
+                        <span>👨‍🎓</span>
+                        <strong>Student Report</strong>
+                        <small>View student information</small>
+                    </button>
+
+                    <button class="report-option" onclick="generateReport('Class')">
+                        <span>🏫</span>
+                        <strong>Class Report</strong>
+                        <small>View classroom information</small>
+                    </button>
+
+                    <button class="report-option" onclick="generateReport('Issue')">
+                        <span>⚠️</span>
+                        <strong>Issue Report</strong>
+                        <small>View reported student issues</small>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMPTY REPORT AREA -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <h2>Report Results</h2>
+                        <p>Generated reports will appear here.</p>
+                    </div>
+
+                </div>
+
+                <div class="teacher-empty">
+
+                    <div class="teacher-empty-icon">
+                        📊
+                    </div>
+
+                    <h3>No Reports Available</h3>
+
+                    <p>
+                        There is currently no student or attendance data
+                        available to generate reports.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="teacher-note">
+
+                <div class="teacher-note-icon">💡</div>
+
+                <div>
+                    <strong>Reports</strong>
+                    <p>
+                        Reports will automatically use the attendance,
+                        student and class information entered into the system.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="teacher-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function generateReport(type) {
+
+    alert(
+        type + " Report\n\n" +
+        "There is currently no data available to generate this report."
+    );
+
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

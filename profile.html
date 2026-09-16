@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher - Profile</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="teacher-page">
+
+<div class="teacher-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="teacher-sidebar">
+
+        <div class="teacher-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Teacher Portal</small>
+            </div>
+        </div>
+
+        <div class="teacher-profile">
+            <div class="teacher-avatar">T</div>
+            <div>
+                <strong>Teacher</strong>
+                <small>Faculty</small>
+            </div>
+        </div>
+
+        <nav class="teacher-nav">
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+            <a href="class.html">🏫 <span>Classes</span></a>
+            <a href="issues.html">⚠️ <span>Issues</span></a>
+            <a href="communication.html">💬 <span>Communication</span></a>
+            <a href="reports.html">📊 <span>Reports</span></a>
+            <a href="profile.html" class="teacher-active">👤 <span>Profile</span></a>
+        </nav>
+
+        <a href="../login.html" class="teacher-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="teacher-main">
+
+        <!-- TOPBAR -->
+        <header class="teacher-topbar">
+
+            <div>
+                <span class="teacher-page-label">TEACHER PORTAL</span>
+                <h1>My Profile</h1>
+            </div>
+
+            <div class="teacher-top-right">
+
+                <div class="teacher-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="teacher-user">
+                    <div class="teacher-user-avatar">T</div>
+                    <span>Teacher</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="teacher-content">
+
+            <div class="teacher-welcome">
+
+                <div class="teacher-welcome-icon">
+                    👤
+                </div>
+
+                <div>
+                    <h2>Teacher Profile</h2>
+                    <p>
+                        View and manage your profile information.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE CARD -->
+            <div class="teacher-card profile-main-card">
+
+                <div class="profile-header">
+
+                    <div class="profile-large-avatar">
+                        T
+                    </div>
+
+                    <div>
+                        <h2>Teacher</h2>
+                        <p>Faculty Member</p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-form">
+
+                    <div class="profile-field">
+                        <label>Full Name</label>
+                        <input
+                            type="text"
+                            id="teacherName"
+                            placeholder="Enter your full name"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            id="teacherEmail"
+                            placeholder="Enter your email"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Phone Number</label>
+                        <input
+                            type="tel"
+                            id="teacherPhone"
+                            placeholder="Enter your phone number"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Subject</label>
+                        <input
+                            type="text"
+                            id="teacherSubject"
+                            placeholder="Enter subject"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Qualification</label>
+                        <input
+                            type="text"
+                            id="teacherQualification"
+                            placeholder="Enter qualification"
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label>Employee ID</label>
+                        <input
+                            type="text"
+                            id="teacherId"
+                            placeholder="Employee ID"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="profile-buttons">
+
+                    <button
+                        class="profile-save-btn"
+                        onclick="saveProfile()">
+                        Save Changes
+                    </button>
+
+                    <button
+                        class="profile-reset-btn"
+                        onclick="resetProfile()">
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT INFORMATION -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+                    <div>
+                        <h2>Account Information</h2>
+                        <p>Your account information will appear here.</p>
+                    </div>
+                </div>
+
+                <div class="account-info-grid">
+
+                    <div class="account-info-item">
+                        <span>Account Status</span>
+                        <strong>Not Set</strong>
+                    </div>
+
+                    <div class="account-info-item">
+                        <span>Role</span>
+                        <strong>Teacher</strong>
+                    </div>
+
+                    <div class="account-info-item">
+                        <span>Classes Assigned</span>
+                        <strong>0</strong>
+                    </div>
+
+                    <div class="account-info-item">
+                        <span>Students</span>
+                        <strong>0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="teacher-note">
+
+                <div class="teacher-note-icon">💡</div>
+
+                <div>
+                    <strong>Profile</strong>
+                    <p>
+                        Keep your contact information updated so the school
+                        management can communicate with you when required.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="teacher-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function saveProfile() {
+
+    const name =
+        document.getElementById("teacherName").value.trim();
+
+    if (name === "") {
+        alert("Please enter your name.");
+        return;
+    }
+
+    alert("Profile saved successfully.");
+
+}
+
+
+function resetProfile() {
+
+    document.getElementById("teacherName").value = "";
+    document.getElementById("teacherEmail").value = "";
+    document.getElementById("teacherPhone").value = "";
+    document.getElementById("teacherSubject").value = "";
+    document.getElementById("teacherQualification").value = "";
+    document.getElementById("teacherId").value = "";
+
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers - Management Portal</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="management-page">
+
+<div class="management-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="management-sidebar">
+
+        <div class="management-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Management Portal</small>
+            </div>
+        </div>
+
+        <div class="management-profile">
+            <div class="management-avatar">M</div>
+            <div>
+                <strong>Management</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+
+        <nav class="management-nav">
+
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="teacher.html" class="management-active">👩‍🏫 <span>Teachers</span></a>
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+            <a href="class.html">🏫 <span>Classes</span></a>
+            <a href="parents.html">👨‍👩‍👧 <span>Parents</span></a>
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+            <a href="issues.html">⚠️ <span>Issues</span></a>
+            <a href="permissions.html">🔐 <span>Permissions</span></a>
+            <a href="notifications.html">🔔 <span>Notifications</span></a>
+            <a href="reports.html">📊 <span>Reports</span></a>
+            <a href="settings.html">⚙️ <span>Settings</span></a>
+            <a href="profile.html">👤 <span>Profile</span></a>
+
+        </nav>
+
+        <a href="../login.html" class="management-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="management-main">
+
+        <header class="management-topbar">
+
+            <div>
+                <span class="management-page-label">
+                    MANAGEMENT PORTAL
+                </span>
+                <h1>Teachers</h1>
+            </div>
+
+            <div class="management-top-right">
+
+                <div class="management-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="management-user">
+                    <div class="management-user-avatar">M</div>
+                    <span>Management</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="management-content">
+
+            <!-- WELCOME -->
+            <div class="management-welcome">
+
+                <div class="management-welcome-icon">
+                    👩‍🏫
+                </div>
+
+                <div>
+                    <h2>Teacher Management</h2>
+                    <p>
+                        Add, view and manage teachers and faculty members.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+            <div class="management-stats">
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">👩‍🏫</div>
+                    <div>
+                        <strong id="totalTeachers">0</strong>
+                        <span>Total Teachers</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">✓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Active</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">⏳</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">🏫</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Assigned Classes</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+            <div class="management-card">
+
+                <div class="teacher-management-toolbar">
+
+                    <input
+                        type="text"
+                        id="teacherSearch"
+                        placeholder="🔍 Search teachers..."
+                        onkeyup="searchTeachers()"
+                    >
+
+                    <button
+                        class="management-primary-btn"
+                        onclick="openTeacherModal()">
+                        + Add Teacher
+                    </button>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-management teacher-empty-large">
+
+                    <div class="empty-management-icon">
+                        👩‍🏫
+                    </div>
+
+                    <h3>No Teachers Added</h3>
+
+                    <p>
+                        There are currently no teachers registered
+                        in the management system.
+                    </p>
+
+                    <button
+                        class="management-primary-btn"
+                        onclick="openTeacherModal()">
+                        + Add First Teacher
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="management-note">
+
+                <div class="management-note-icon">💡</div>
+
+                <div>
+                    <strong>Teacher Management</strong>
+                    <p>
+                        Teacher accounts, faculty information and
+                        class assignments can be managed from this section.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="management-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ADD TEACHER MODAL -->
+
+<div id="teacherModal" class="management-modal">
+
+    <div class="management-modal-content">
+
+        <button
+            class="management-modal-close"
+            onclick="closeTeacherModal()">
+            ×
+        </button>
+
+        <div class="management-modal-icon">
+            👩‍🏫
+        </div>
+
+        <h2>Add Teacher</h2>
+
+        <p>Enter the teacher's information.</p>
+
+
+        <label>Full Name</label>
+
+        <input
+            type="text"
+            id="teacherName"
+            placeholder="Enter teacher name"
+        >
+
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            id="teacherEmail"
+            placeholder="Enter email address"
+        >
+
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            id="teacherPhone"
+            placeholder="Enter phone number"
+        >
+
+
+        <label>Subject</label>
+
+        <input
+            type="text"
+            id="teacherSubject"
+            placeholder="Enter subject"
+        >
+
+
+        <div class="management-modal-buttons">
+
+            <button
+                class="management-cancel-btn"
+                onclick="closeTeacherModal()">
+                Cancel
+            </button>
+
+            <button
+                class="management-primary-btn"
+                onclick="addTeacher()">
+                Add Teacher
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openTeacherModal() {
+    document.getElementById("teacherModal").style.display = "flex";
+}
+
+function closeTeacherModal() {
+    document.getElementById("teacherModal").style.display = "none";
+}
+
+function addTeacher() {
+
+    const name =
+        document.getElementById("teacherName").value.trim();
+
+    const email =
+        document.getElementById("teacherEmail").value.trim();
+
+    const phone =
+        document.getElementById("teacherPhone").value.trim();
+
+    const subject =
+        document.getElementById("teacherSubject").value.trim();
+
+
+    if (name === "") {
+        alert("Please enter the teacher's name.");
+        return;
+    }
+
+    if (email === "") {
+        alert("Please enter the teacher's email.");
+        return;
+    }
+
+    if (phone === "") {
+        alert("Please enter the teacher's phone number.");
+        return;
+    }
+
+    if (subject === "") {
+        alert("Please enter the teacher's subject.");
+        return;
+    }
+
+
+    alert(
+        "Teacher added successfully!\n\n" +
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\nSubject: " + subject
+    );
+
+
+    document.getElementById("teacherName").value = "";
+    document.getElementById("teacherEmail").value = "";
+    document.getElementById("teacherPhone").value = "";
+    document.getElementById("teacherSubject").value = "";
+
+    closeTeacherModal();
+}
+
+
+function searchTeachers() {
+
+    const search =
+        document.getElementById("teacherSearch").value.trim();
+
+    if (search !== "") {
+
+        alert(
+            "No teachers found for: " + search
+        );
+
+        document.getElementById("teacherSearch").value = "";
+    }
+
+}
+
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById("teacherModal");
+
+    if (event.target === modal) {
+        closeTeacherModal();
+    }
+
+};
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

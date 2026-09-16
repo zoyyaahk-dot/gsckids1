@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students | Global Kids</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="teacher-page">
+
+<aside class="teacher-sidebar">
+
+    <div class="teacher-brand">
+        <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+
+        <div>
+            <strong>GLOBAL KIDS</strong>
+            <span>Teacher Portal</span>
+        </div>
+    </div>
+
+    <div class="teacher-profile">
+        <div class="teacher-avatar">👩‍🏫</div>
+
+        <div>
+            <strong>Teacher</strong>
+            <span>Faculty Member</span>
+        </div>
+    </div>
+
+    <nav class="teacher-nav">
+
+        <a href="dashboard.html">
+            <span>▦</span>
+            Dashboard
+        </a>
+
+        <a href="attendence.html">
+            <span>✓</span>
+            Attendance
+        </a>
+
+        <a href="student.html" class="teacher-active">
+            <span>👥</span>
+            Students
+        </a>
+
+        <a href="class.html">
+            <span>▤</span>
+            Classes
+        </a>
+
+        <a href="issues.html">
+            <span>⚠</span>
+            Issues
+        </a>
+
+        <a href="communication.html">
+            <span>✉</span>
+            Communication
+        </a>
+
+        <a href="reports.html">
+            <span>▥</span>
+            Reports
+        </a>
+
+        <a href="profile.html">
+            <span>⚙</span>
+            Profile
+        </a>
+
+    </nav>
+
+    <a href="../login.html" class="teacher-logout">
+        <span>↪</span>
+        Logout
+    </a>
+
+</aside>
+
+<main class="teacher-main">
+
+    <header class="teacher-topbar">
+
+        <div>
+            <span class="teacher-page-label">TEACHER PORTAL</span>
+            <h1>Students</h1>
+        </div>
+
+        <div class="teacher-top-right">
+
+            <button class="teacher-notification"
+                    onclick="showNotifications()">
+                🔔
+                <span>0</span>
+            </button>
+
+            <div class="teacher-user">
+                <div class="teacher-user-avatar">T</div>
+
+                <div>
+                    <strong>Teacher</strong>
+                    <span>Faculty Member</span>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="teacher-content">
+
+        <div class="teacher-welcome">
+
+            <div class="teacher-welcome-icon">👥</div>
+
+            <div>
+                <h2>Student Information</h2>
+                <p>
+                    View and manage student information for your assigned classes.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- STUDENT STATS -->
+
+        <div class="teacher-stats">
+
+            <div class="teacher-stat">
+                <div class="teacher-stat-icon">👥</div>
+
+                <div>
+                    <span>Total Students</span>
+                    <strong>0</strong>
+                </div>
+            </div>
+
+            <div class="teacher-stat green-stat">
+                <div class="teacher-stat-icon">✓</div>
+
+                <div>
+                    <span>Active Students</span>
+                    <strong>0</strong>
+                </div>
+            </div>
+
+            <div class="teacher-stat pink-stat">
+                <div class="teacher-stat-icon">⚠</div>
+
+                <div>
+                    <span>Issues</span>
+                    <strong>0</strong>
+                </div>
+            </div>
+
+            <div class="teacher-stat yellow-stat">
+                <div class="teacher-stat-icon">📚</div>
+
+                <div>
+                    <span>Classes</span>
+                    <strong>0</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- STUDENT LIST -->
+
+        <div class="teacher-card">
+
+            <div class="teacher-card-heading">
+
+                <div>
+                    <h2>Student List</h2>
+                    <p>Students assigned to your classes will appear here.</p>
+                </div>
+
+                <button class="teacher-primary-btn"
+                        onclick="addStudent()">
+                    + Add Student
+                </button>
+
+            </div>
+
+            <div class="student-tools">
+
+                <div class="student-search">
+
+                    <span>⌕</span>
+
+                    <input type="text"
+                           id="studentSearch"
+                           placeholder="Search student..."
+                           onkeyup="searchStudent()">
+
+                </div>
+
+                <select id="studentClass"
+                        onchange="filterClass()">
+
+                    <option value="">All Classes</option>
+                    <option value="UKG">UKG</option>
+                    <option value="LKG">LKG</option>
+                    <option value="Grade 1">Grade 1</option>
+                    <option value="Grade 2">Grade 2</option>
+                    <option value="Grade 3">Grade 3</option>
+                    <option value="Grade 4">Grade 4</option>
+                    <option value="Grade 5">Grade 5</option>
+                    <option value="Grade 6">Grade 6</option>
+                    <option value="Grade 7">Grade 7</option>
+                    <option value="Grade 8">Grade 8</option>
+                    <option value="Grade 9">Grade 9</option>
+                    <option value="Grade 10">Grade 10</option>
+
+                </select>
+
+            </div>
+
+            <div class="teacher-empty">
+
+                <div class="teacher-empty-icon">
+                    👥
+                </div>
+
+                <h3>No Students Added</h3>
+
+                <p>
+                    Student records will appear here after students are added
+                    to the system.
+                </p>
+
+                <button class="teacher-primary-btn"
+                        onclick="addStudent()">
+                    + Add First Student
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- STUDENT INFORMATION -->
+
+        <div class="teacher-card">
+
+            <div class="teacher-card-heading">
+
+                <div>
+                    <h2>Student Information</h2>
+                    <p>Detailed information will be available once students are added.</p>
+                </div>
+
+            </div>
+
+            <div class="student-info-grid">
+
+                <div class="student-info-box">
+                    <span>Student Name</span>
+                    <strong>—</strong>
+                </div>
+
+                <div class="student-info-box">
+                    <span>Class</span>
+                    <strong>—</strong>
+                </div>
+
+                <div class="student-info-box">
+                    <span>Attendance</span>
+                    <strong>0%</strong>
+                </div>
+
+                <div class="student-info-box">
+                    <span>Issues</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="teacher-footer">
+        © 2026 Global Kids. All Rights Reserved.
+    </footer>
+
+</main>
+
+<script>
+
+function showNotifications() {
+    alert("You have 0 new notifications.");
+}
+
+function addStudent() {
+    alert("Student registration will be available after the student management system is connected.");
+}
+
+function searchStudent() {
+    const search = document.getElementById("studentSearch").value;
+
+    if (search.length > 0) {
+        console.log("Searching for:", search);
+    }
+}
+
+function filterClass() {
+    const selectedClass = document.getElementById("studentClass").value;
+
+    if (selectedClass) {
+        console.log("Selected class:", selectedClass);
+    }
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

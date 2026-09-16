@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Global Kids</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="teacher-page">
+
+    <aside class="teacher-sidebar">
+
+        <div class="teacher-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <span>Teacher Portal</span>
+            </div>
+        </div>
+
+        <div class="teacher-profile">
+            <div class="teacher-avatar">👩‍🏫</div>
+
+            <div>
+                <strong>Teacher</strong>
+                <span>Faculty Member</span>
+            </div>
+        </div>
+
+        <nav class="teacher-nav">
+
+            <a href="dashboard.html">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="attendence.html" class="teacher-active">
+                <span>✓</span>
+                Attendance
+            </a>
+
+            <a href="student.html">
+                <span>👥</span>
+                Students
+            </a>
+
+            <a href="class.html">
+                <span>▤</span>
+                Classes
+            </a>
+
+            <a href="issues.html">
+                <span>⚠</span>
+                Issues
+            </a>
+
+            <a href="communication.html">
+                <span>✉</span>
+                Communication
+            </a>
+
+            <a href="reports.html">
+                <span>▥</span>
+                Reports
+            </a>
+
+            <a href="profile.html">
+                <span>⚙</span>
+                Profile
+            </a>
+
+        </nav>
+
+        <a href="../login.html" class="teacher-logout">
+            <span>↪</span>
+            Logout
+        </a>
+
+    </aside>
+
+    <main class="teacher-main">
+
+        <header class="teacher-topbar">
+
+            <div>
+                <span class="teacher-page-label">TEACHER PORTAL</span>
+                <h1>Attendance</h1>
+            </div>
+
+            <div class="teacher-top-right">
+
+                <button class="teacher-notification"
+                        onclick="showNotifications()">
+                    🔔
+                    <span>0</span>
+                </button>
+
+                <div class="teacher-user">
+                    <div class="teacher-user-avatar">T</div>
+
+                    <div>
+                        <strong>Teacher</strong>
+                        <span>Faculty Member</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="teacher-content">
+
+            <div class="teacher-welcome">
+                <div class="teacher-welcome-icon">📋</div>
+
+                <div>
+                    <h2>Attendance Management</h2>
+                    <p>
+                        Select a class and mark student attendance.
+                        Attendance records will appear here after students are added.
+                    </p>
+                </div>
+            </div>
+
+            <div class="teacher-stats">
+
+                <div class="teacher-stat">
+                    <div class="teacher-stat-icon">👥</div>
+                    <div>
+                        <span>Total Students</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="teacher-stat green-stat">
+                    <div class="teacher-stat-icon">✓</div>
+                    <div>
+                        <span>Present</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="teacher-stat pink-stat">
+                    <div class="teacher-stat-icon">✕</div>
+                    <div>
+                        <span>Absent</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+
+                <div class="teacher-stat yellow-stat">
+                    <div class="teacher-stat-icon">%</div>
+                    <div>
+                        <span>Attendance Rate</span>
+                        <strong>0%</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+                    <div>
+                        <h2>Mark Attendance</h2>
+                        <p>Choose a class to view attendance details.</p>
+                    </div>
+
+                    <button class="teacher-primary-btn"
+                            onclick="startAttendance()">
+                        + Mark Attendance
+                    </button>
+                </div>
+
+                <div class="teacher-form-row">
+
+                    <div class="teacher-form-group">
+                        <label>Select Class</label>
+
+                        <select id="classSelect">
+                            <option value="">Select a class</option>
+                            <option value="ukg">UKG</option>
+                            <option value="lkg">LKG</option>
+                            <option value="1">Grade 1</option>
+                            <option value="2">Grade 2</option>
+                            <option value="3">Grade 3</option>
+                            <option value="4">Grade 4</option>
+                            <option value="5">Grade 5</option>
+                            <option value="6">Grade 6</option>
+                            <option value="7">Grade 7</option>
+                            <option value="8">Grade 8</option>
+                            <option value="9">Grade 9</option>
+                            <option value="10">Grade 10</option>
+                        </select>
+                    </div>
+
+                    <div class="teacher-form-group">
+                        <label>Date</label>
+
+                        <input type="date"
+                               id="attendanceDate">
+                    </div>
+
+                </div>
+
+                <div class="teacher-empty">
+
+                    <div class="teacher-empty-icon">📋</div>
+
+                    <h3>No Attendance Records</h3>
+
+                    <p>
+                        No students have been added yet.
+                        Attendance information will appear here after student records are created.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+                    <div>
+                        <h2>Attendance Summary</h2>
+                        <p>Today's attendance overview</p>
+                    </div>
+
+                    <span class="teacher-zero-badge">0 Records</span>
+                </div>
+
+                <div class="teacher-attendance-summary">
+
+                    <div class="attendance-circle">
+                        <span>0%</span>
+                        <small>Attendance</small>
+                    </div>
+
+                    <div class="attendance-details">
+
+                        <div class="attendance-present">
+                            <span>Present</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="attendance-absent">
+                            <span>Absent</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div>
+                            <span>Not Marked</span>
+                            <strong>0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer class="teacher-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+    <script>
+        document.getElementById("attendanceDate").value =
+            new Date().toISOString().split("T")[0];
+
+        function startAttendance() {
+            const selectedClass =
+                document.getElementById("classSelect").value;
+
+            if (selectedClass === "") {
+                alert("Please select a class first.");
+                return;
+            }
+
+            alert("No students are available in this class yet.");
+        }
+
+        function showNotifications() {
+            alert("You have 0 new notifications.");
+        }
+    </script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

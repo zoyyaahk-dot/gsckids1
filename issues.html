@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher - Issues</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="teacher-page">
+
+<div class="teacher-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="teacher-sidebar">
+
+        <div class="teacher-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Teacher Portal</small>
+            </div>
+        </div>
+
+        <div class="teacher-profile">
+            <div class="teacher-avatar">T</div>
+            <div>
+                <strong>Teacher</strong>
+                <small>Faculty</small>
+            </div>
+        </div>
+
+        <nav class="teacher-nav">
+
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+
+            <a href="class.html">🏫 <span>Classes</span></a>
+
+            <a href="issues.html" class="teacher-active">
+                ⚠️ <span>Issues</span>
+            </a>
+
+            <a href="communication.html">💬 <span>Communication</span></a>
+
+            <a href="reports.html">📊 <span>Reports</span></a>
+
+            <a href="profile.html">👤 <span>Profile</span></a>
+
+        </nav>
+
+        <a href="../login.html" class="teacher-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="teacher-main">
+
+        <!-- TOP BAR -->
+        <header class="teacher-topbar">
+
+            <div>
+                <span class="teacher-page-label">TEACHER PORTAL</span>
+                <h1>Issues</h1>
+            </div>
+
+            <div class="teacher-top-right">
+
+                <div class="teacher-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="teacher-user">
+                    <div class="teacher-user-avatar">T</div>
+                    <span>Teacher</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="teacher-content">
+
+            <div class="teacher-welcome">
+
+                <div class="teacher-welcome-icon">
+                    ⚠️
+                </div>
+
+                <div>
+                    <h2>Student Issues</h2>
+                    <p>
+                        Report and manage problems related to students.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+            <div class="teacher-stats">
+
+                <div class="teacher-stat">
+                    <div class="teacher-stat-icon">⚠️</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Total Issues</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat green-stat">
+                    <div class="teacher-stat-icon">✓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Resolved</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat pink-stat">
+                    <div class="teacher-stat-icon">⏳</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <div class="teacher-stat yellow-stat">
+                    <div class="teacher-stat-icon">📨</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Parent Alerts</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ISSUE CARD -->
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <h2>Reported Issues</h2>
+                        <p>No student issues have been reported.</p>
+                    </div>
+
+                    <button class="teacher-primary-btn" onclick="openIssueModal()">
+                        + Report Issue
+                    </button>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="teacher-empty">
+
+                    <div class="teacher-empty-icon">
+                        ✓
+                    </div>
+
+                    <h3>No Issues Reported</h3>
+
+                    <p>
+                        There are currently no student-related issues.
+                    </p>
+
+                    <button class="teacher-primary-btn" onclick="openIssueModal()">
+                        Report an Issue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="teacher-note">
+
+                <div class="teacher-note-icon">💡</div>
+
+                <div>
+                    <strong>Important</strong>
+                    <p>
+                        If you notice a problem with a student, report it here.
+                        The issue can later be reviewed by the management or principal.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="teacher-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- REPORT ISSUE MODAL -->
+<div id="issueModal" class="issue-modal">
+
+    <div class="issue-modal-content">
+
+        <button class="issue-modal-close" onclick="closeIssueModal()">
+            ×
+        </button>
+
+        <div class="issue-modal-icon">
+            ⚠️
+        </div>
+
+        <h2>Report Student Issue</h2>
+
+        <p>
+            Enter the details of the issue below.
+        </p>
+
+        <label>Student Name</label>
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter student name"
+        >
+
+        <label>Issue Type</label>
+        <select id="issueType">
+            <option value="">Select issue type</option>
+            <option>Attendance</option>
+            <option>Academic</option>
+            <option>Behaviour</option>
+            <option>Health</option>
+            <option>Other</option>
+        </select>
+
+        <label>Issue Description</label>
+        <textarea
+            id="issueDescription"
+            rows="4"
+            placeholder="Describe the issue..."
+        ></textarea>
+
+        <div class="issue-modal-buttons">
+
+            <button
+                class="issue-cancel-btn"
+                onclick="closeIssueModal()">
+                Cancel
+            </button>
+
+            <button
+                class="teacher-primary-btn"
+                onclick="submitIssue()">
+                Submit Issue
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openIssueModal() {
+    document.getElementById("issueModal").style.display = "flex";
+}
+
+function closeIssueModal() {
+    document.getElementById("issueModal").style.display = "none";
+}
+
+function submitIssue() {
+
+    const student =
+        document.getElementById("studentName").value.trim();
+
+    const type =
+        document.getElementById("issueType").value;
+
+    const description =
+        document.getElementById("issueDescription").value.trim();
+
+    if (student === "") {
+        alert("Please enter the student name.");
+        return;
+    }
+
+    if (type === "") {
+        alert("Please select the issue type.");
+        return;
+    }
+
+    if (description === "") {
+        alert("Please describe the issue.");
+        return;
+    }
+
+    alert(
+        "Issue submitted successfully.\n\n" +
+        "Student: " + student +
+        "\nIssue Type: " + type
+    );
+
+    document.getElementById("studentName").value = "";
+    document.getElementById("issueType").value = "";
+    document.getElementById("issueDescription").value = "";
+
+    closeIssueModal();
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("issueModal");
+
+    if (event.target === modal) {
+        closeIssueModal();
+    }
+
+};
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

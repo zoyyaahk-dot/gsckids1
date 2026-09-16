@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | Global Kids</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="management-page">
+
+<div class="management-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="management-sidebar">
+
+        <div class="management-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <h2>Global Kids</h2>
+                <span>Management</span>
+            </div>
+        </div>
+
+        <div class="management-profile">
+            <div class="management-avatar">M</div>
+            <div>
+                <strong>Management</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+        <nav class="management-nav">
+
+            <a href="dashboard.html"><span>⌂</span> Dashboard</a>
+            <a href="teacher.html"><span>👨‍🏫</span> Teachers</a>
+            <a href="student.html"><span>🎓</span> Students</a>
+            <a href="class.html"><span>🏫</span> Classes</a>
+            <a href="parents.html"><span>👨‍👩‍👧</span> Parents</a>
+            <a href="attendence.html"><span>📋</span> Attendance</a>
+            <a href="issues.html"><span>⚠</span> Issues</a>
+            <a href="permissions.html"><span>🔐</span> Permissions</a>
+            <a href="notifications.html"><span>🔔</span> Notifications</a>
+            <a href="reports.html"><span>📊</span> Reports</a>
+
+            <a href="settings.html" class="management-active">
+                <span>⚙</span> Settings
+            </a>
+
+            <a href="profile.html"><span>👤</span> Profile</a>
+
+        </nav>
+
+        <a href="../login.html" class="management-logout">
+            <span>↪</span> Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="management-main">
+
+        <header class="management-topbar">
+
+            <div>
+                <span class="management-page-label">Management</span>
+                <h1>Settings</h1>
+            </div>
+
+            <div class="management-top-right">
+
+                <button class="management-notification" onclick="showNotifications()">
+                    🔔
+                    <span>0</span>
+                </button>
+
+                <div class="management-user">
+                    <div class="management-user-avatar">M</div>
+                    <div>
+                        <strong>Management</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="management-content">
+
+            <div class="settings-heading">
+                <div>
+                    <h2>System Settings</h2>
+                    <p>Manage school portal preferences and system options.</p>
+                </div>
+            </div>
+
+
+            <!-- SCHOOL SETTINGS -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-title">
+                    <div class="settings-icon">🏫</div>
+
+                    <div>
+                        <h3>School Information</h3>
+                        <p>Basic information displayed across the portal.</p>
+                    </div>
+                </div>
+
+                <div class="settings-form-grid">
+
+                    <div class="settings-field">
+                        <label>School Name</label>
+                        <input
+                            type="text"
+                            id="schoolName"
+                            placeholder="Global Kids"
+                        >
+                    </div>
+
+                    <div class="settings-field">
+                        <label>Academic Year</label>
+                        <input
+                            type="text"
+                            id="academicYear"
+                            placeholder="2026 - 2027"
+                        >
+                    </div>
+
+                    <div class="settings-field">
+                        <label>School Email</label>
+                        <input
+                            type="email"
+                            id="schoolEmail"
+                            placeholder="Enter school email"
+                        >
+                    </div>
+
+                    <div class="settings-field">
+                        <label>School Phone</label>
+                        <input
+                            type="tel"
+                            id="schoolPhone"
+                            placeholder="Enter school phone"
+                        >
+                    </div>
+
+                </div>
+
+                <button class="settings-save-btn" onclick="saveSchoolSettings()">
+                    Save Changes
+                </button>
+
+            </div>
+
+
+            <!-- PORTAL SETTINGS -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-title">
+                    <div class="settings-icon">⚙</div>
+
+                    <div>
+                        <h3>Portal Preferences</h3>
+                        <p>Control how the management portal behaves.</p>
+                    </div>
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Notifications</strong>
+                        <span>Allow management notifications.</span>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input type="checkbox" id="notificationToggle">
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Parent Communication</strong>
+                        <span>Allow communication between staff and parents.</span>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input type="checkbox" id="parentToggle">
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Teacher Access</strong>
+                        <span>Allow teachers to access their assigned modules.</span>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input type="checkbox" id="teacherToggle">
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Student Records</strong>
+                        <span>Allow authorised staff to manage student records.</span>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input type="checkbox" id="studentToggle">
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <button class="settings-save-btn" onclick="savePortalSettings()">
+                    Save Preferences
+                </button>
+
+            </div>
+
+
+            <!-- SECURITY -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-title">
+                    <div class="settings-icon">🔒</div>
+
+                    <div>
+                        <h3>Security</h3>
+                        <p>Manage basic account security options.</p>
+                    </div>
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+                        <strong>Two-Factor Authentication</strong>
+                        <span>Add an extra layer of protection to management accounts.</span>
+                    </div>
+
+                    <label class="settings-switch">
+                        <input type="checkbox" id="twoFactorToggle">
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <button class="settings-security-btn" onclick="changePassword()">
+                    Change Password
+                </button>
+
+            </div>
+
+
+            <!-- DANGER ZONE -->
+
+            <div class="settings-card settings-danger-card">
+
+                <div class="settings-card-title">
+                    <div class="settings-icon danger-icon">⚠</div>
+
+                    <div>
+                        <h3>System Actions</h3>
+                        <p>Actions that affect portal settings.</p>
+                    </div>
+                </div>
+
+                <button class="settings-reset-btn" onclick="resetSettings()">
+                    Reset Settings
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <footer class="management-footer">
+            © 2026 Global Kids. All rights reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+function showNotifications() {
+    alert("You have 0 new notifications.");
+}
+
+
+function saveSchoolSettings() {
+
+    const schoolName = document.getElementById("schoolName").value.trim();
+    const academicYear = document.getElementById("academicYear").value.trim();
+    const email = document.getElementById("schoolEmail").value.trim();
+    const phone = document.getElementById("schoolPhone").value.trim();
+
+    if (!schoolName || !academicYear || !email || !phone) {
+        alert("Please fill in all school information fields.");
+        return;
+    }
+
+    alert("School information saved successfully.");
+}
+
+
+function savePortalSettings() {
+
+    alert("Portal preferences saved successfully.");
+}
+
+
+function changePassword() {
+
+    const newPassword = prompt("Enter your new password:");
+
+    if (!newPassword) {
+        return;
+    }
+
+    if (newPassword.length < 6) {
+        alert("Password must contain at least 6 characters.");
+        return;
+    }
+
+    alert("Password changed successfully.");
+}
+
+
+function resetSettings() {
+
+    const confirmReset = confirm(
+        "Are you sure you want to reset the portal settings?"
+    );
+
+    if (!confirmReset) {
+        return;
+    }
+
+    document.getElementById("schoolName").value = "";
+    document.getElementById("academicYear").value = "";
+    document.getElementById("schoolEmail").value = "";
+    document.getElementById("schoolPhone").value = "";
+
+    document.getElementById("notificationToggle").checked = false;
+    document.getElementById("parentToggle").checked = false;
+    document.getElementById("teacherToggle").checked = false;
+    document.getElementById("studentToggle").checked = false;
+    document.getElementById("twoFactorToggle").checked = false;
+
+    alert("Settings have been reset.");
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

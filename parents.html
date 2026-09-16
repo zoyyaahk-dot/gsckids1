@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents - Management Portal</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="management-page">
+
+<div class="management-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="management-sidebar">
+
+        <div class="management-brand">
+            <img src="../image/logo.jpeg.jpeg" alt="Global Kids Logo">
+            <div>
+                <strong>GLOBAL KIDS</strong>
+                <small>Management Portal</small>
+            </div>
+        </div>
+
+        <div class="management-profile">
+            <div class="management-avatar">M</div>
+            <div>
+                <strong>Management</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+
+        <nav class="management-nav">
+            <a href="dashboard.html">🏠 <span>Dashboard</span></a>
+            <a href="teacher.html">👩‍🏫 <span>Teachers</span></a>
+            <a href="student.html">👨‍🎓 <span>Students</span></a>
+            <a href="class.html">🏫 <span>Classes</span></a>
+            <a href="parents.html" class="management-active">👨‍👩‍👧 <span>Parents</span></a>
+            <a href="attendence.html">📋 <span>Attendance</span></a>
+            <a href="issues.html">⚠️ <span>Issues</span></a>
+            <a href="permissions.html">🔐 <span>Permissions</span></a>
+            <a href="notifications.html">🔔 <span>Notifications</span></a>
+            <a href="reports.html">📊 <span>Reports</span></a>
+            <a href="settings.html">⚙️ <span>Settings</span></a>
+            <a href="profile.html">👤 <span>Profile</span></a>
+        </nav>
+
+        <a href="../login.html" class="management-logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="management-main">
+
+        <!-- TOP BAR -->
+        <header class="management-topbar">
+
+            <div>
+                <span class="management-page-label">
+                    MANAGEMENT PORTAL
+                </span>
+                <h1>Parents</h1>
+            </div>
+
+            <div class="management-top-right">
+
+                <div class="management-notification">
+                    🔔
+                    <span>0</span>
+                </div>
+
+                <div class="management-user">
+                    <div class="management-user-avatar">M</div>
+                    <span>Management</span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="management-content">
+
+            <!-- WELCOME -->
+            <div class="management-welcome">
+
+                <div class="management-welcome-icon">
+                    👨‍👩‍👧
+                </div>
+
+                <div>
+                    <h2>Parent Management</h2>
+                    <p>
+                        Manage parent information and connect parents with students.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+            <div class="management-stats">
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">👨‍👩‍👧</div>
+                    <div>
+                        <strong id="totalParents">0</strong>
+                        <span>Total Parents</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">✓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Active Accounts</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">👨‍🎓</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Linked Students</span>
+                    </div>
+                </div>
+
+                <div class="management-stat">
+                    <div class="management-stat-icon">🔔</div>
+                    <div>
+                        <strong>0</strong>
+                        <span>Notifications</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- PARENT CARD -->
+            <div class="management-card">
+
+                <div class="parent-management-toolbar">
+
+                    <input
+                        type="text"
+                        id="parentSearch"
+                        placeholder="🔍 Search parents..."
+                        onkeyup="searchParents()"
+                    >
+
+                    <button
+                        class="management-primary-btn"
+                        onclick="openParentModal()">
+                        + Add Parent
+                    </button>
+
+                </div>
+
+
+                <!-- EMPTY STATE -->
+                <div class="empty-management parent-empty-large">
+
+                    <div class="empty-management-icon">
+                        👨‍👩‍👧
+                    </div>
+
+                    <h3>No Parents Added</h3>
+
+                    <p>
+                        There are currently no parent accounts registered
+                        in the management system.
+                    </p>
+
+                    <button
+                        class="management-primary-btn"
+                        onclick="openParentModal()">
+                        + Add First Parent
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTE -->
+            <div class="management-note">
+
+                <div class="management-note-icon">💡</div>
+
+                <div>
+                    <strong>Parent Accounts</strong>
+
+                    <p>
+                        Parent accounts can later be connected with student
+                        records so parents can view attendance, progress,
+                        notices and other school updates.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="management-footer">
+            © 2026 Global Kids. All Rights Reserved.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- ADD PARENT MODAL -->
+
+<div id="parentModal" class="management-modal">
+
+    <div class="management-modal-content">
+
+        <button
+            class="management-modal-close"
+            onclick="closeParentModal()">
+            ×
+        </button>
+
+        <div class="management-modal-icon">
+            👨‍👩‍👧
+        </div>
+
+        <h2>Add Parent</h2>
+
+        <p>Enter the parent's information.</p>
+
+
+        <label>Parent Name</label>
+
+        <input
+            type="text"
+            id="parentName"
+            placeholder="Enter parent name"
+        >
+
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            id="parentEmail"
+            placeholder="Enter email address"
+        >
+
+
+        <label>Phone Number</label>
+
+        <input
+            type="tel"
+            id="parentPhone"
+            placeholder="Enter phone number"
+        >
+
+
+        <label>Student Name</label>
+
+        <input
+            type="text"
+            id="linkedStudent"
+            placeholder="Enter linked student name"
+        >
+
+
+        <div class="management-modal-buttons">
+
+            <button
+                class="management-cancel-btn"
+                onclick="closeParentModal()">
+                Cancel
+            </button>
+
+            <button
+                class="management-primary-btn"
+                onclick="addParent()">
+                Add Parent
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openParentModal() {
+    document.getElementById("parentModal").style.display = "flex";
+}
+
+
+function closeParentModal() {
+    document.getElementById("parentModal").style.display = "none";
+}
+
+
+function addParent() {
+
+    const name =
+        document.getElementById("parentName").value.trim();
+
+    const email =
+        document.getElementById("parentEmail").value.trim();
+
+    const phone =
+        document.getElementById("parentPhone").value.trim();
+
+    const student =
+        document.getElementById("linkedStudent").value.trim();
+
+
+    if (name === "") {
+        alert("Please enter the parent's name.");
+        return;
+    }
+
+    if (email === "") {
+        alert("Please enter the parent's email.");
+        return;
+    }
+
+    if (phone === "") {
+        alert("Please enter the parent's phone number.");
+        return;
+    }
+
+    if (student === "") {
+        alert("Please enter the linked student's name.");
+        return;
+    }
+
+
+    alert(
+        "Parent added successfully!\n\n" +
+        "Parent: " + name +
+        "\nEmail: " + email +
+        "\nStudent: " + student
+    );
+
+
+    document.getElementById("parentName").value = "";
+    document.getElementById("parentEmail").value = "";
+    document.getElementById("parentPhone").value = "";
+    document.getElementById("linkedStudent").value = "";
+
+    closeParentModal();
+}
+
+
+function searchParents() {
+
+    const search =
+        document.getElementById("parentSearch").value.trim();
+
+    if (search !== "") {
+
+        alert(
+            "No parents found for: " + search
+        );
+
+        document.getElementById("parentSearch").value = "";
+    }
+
+}
+
+
+window.onclick = function(event) {
+
+    const modal =
+        document.getElementById("parentModal");
+
+    if (event.target === modal) {
+        closeParentModal();
+    }
+
+};
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teacher Dashboard | Global Kids</title>
+
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body class="teacher-page">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="teacher-sidebar">
+
+    <div class="teacher-brand">
+
+        <img src="../image/logo.jpeg.jpeg"
+             alt="Global Kids Logo"
+             onerror="this.style.display='none';">
+
+        <div>
+            <strong>GLOBAL KIDS</strong>
+            <span>Teacher Portal</span>
+        </div>
+
+    </div>
+
+
+    <div class="teacher-profile">
+
+        <div class="teacher-avatar">
+            👩‍🏫
+        </div>
+
+        <div>
+            <strong>Teacher</strong>
+            <span>Class Teacher</span>
+        </div>
+
+    </div>
+
+
+    <nav class="teacher-nav">
+
+        <a href="dashboard.html" class="teacher-active">
+            <span>⌂</span>
+            Dashboard
+        </a>
+
+        <a href="attendence.html">
+            <span>✓</span>
+            Attendance
+        </a>
+
+        <a href="student.html">
+            <span>👨‍🎓</span>
+            Students
+        </a>
+
+        <a href="class.html">
+            <span>▣</span>
+            My Classes
+        </a>
+
+        <a href="issues.html">
+            <span>⚠</span>
+            Student Issues
+        </a>
+
+        <a href="communication.html">
+            <span>💬</span>
+            Parent Communication
+        </a>
+
+        <a href="reports.html">
+            <span>▤</span>
+            Reports
+        </a>
+
+        <a href="profile.html">
+            <span>👤</span>
+            My Profile
+        </a>
+
+    </nav>
+
+
+    <a href="../login.html" class="teacher-logout">
+        <span>↪</span>
+        Logout
+    </a>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="teacher-main">
+
+    <!-- TOP BAR -->
+
+    <header class="teacher-topbar">
+
+        <div>
+            <span class="teacher-page-label">
+                TEACHER PORTAL
+            </span>
+
+            <h1>Dashboard</h1>
+        </div>
+
+
+        <div class="teacher-top-right">
+
+            <button class="teacher-notification" onclick="showNotifications()">
+                🔔
+                <span>3</span>
+            </button>
+
+            <div class="teacher-user">
+
+                <div class="teacher-user-avatar">
+                    👩‍🏫
+                </div>
+
+                <div>
+                    <strong>Teacher</strong>
+                    <span>Class Teacher</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTENT -->
+
+    <section class="teacher-content">
+
+        <!-- WELCOME -->
+
+        <div class="teacher-welcome">
+
+            <div class="teacher-welcome-icon">
+                👋
+            </div>
+
+            <div>
+                <span>WELCOME BACK</span>
+
+                <h2>
+                    Good Evening, Teacher!
+                </h2>
+
+                <p>
+                    Here's what's happening with your class today.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="teacher-stats">
+
+            <div class="teacher-stat">
+
+                <div class="teacher-stat-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+                    <span>Total Students</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat">
+
+                <div class="teacher-stat-icon green-stat">
+                    ✓
+                </div>
+
+                <div>
+                    <span>Present Today</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat">
+
+                <div class="teacher-stat-icon pink-stat">
+                    ○
+                </div>
+
+                <div>
+                    <span>Absent Today</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="teacher-stat">
+
+                <div class="teacher-stat-icon yellow-stat">
+                    ⚠
+                </div>
+
+                <div>
+                    <span>Pending Issues</span>
+                    <strong>0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="teacher-heading">
+
+            <div>
+                <span>QUICK ACCESS</span>
+                <h2>What would you like to do?</h2>
+            </div>
+
+        </div>
+
+
+        <div class="teacher-actions">
+
+            <a href="attendence.html" class="teacher-action">
+
+                <div class="teacher-action-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <h3>Mark Attendance</h3>
+                    <p>Record today's student attendance.</p>
+                </div>
+
+                <span>→</span>
+
+            </a>
+
+
+            <a href="student.html" class="teacher-action">
+
+                <div class="teacher-action-icon pink-action">
+                    👨‍🎓
+                </div>
+
+                <div>
+                    <h3>Student Information</h3>
+                    <p>View your students' details.</p>
+                </div>
+
+                <span>→</span>
+
+            </a>
+
+
+            <a href="issues.html" class="teacher-action">
+
+                <div class="teacher-action-icon yellow-action">
+                    ⚠
+                </div>
+
+                <div>
+                    <h3>Report Student Issue</h3>
+                    <p>Report an issue to management.</p>
+                </div>
+
+                <span>→</span>
+
+            </a>
+
+
+            <a href="communication.html" class="teacher-action">
+
+                <div class="teacher-action-icon blue-action">
+                    💬
+                </div>
+
+                <div>
+                    <h3>Contact Parents</h3>
+                    <p>Send an update to parents.</p>
+                </div>
+
+                <span>→</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- LOWER SECTION -->
+
+        <div class="teacher-lower">
+
+
+            <!-- TODAY'S ATTENDANCE -->
+
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <span>TODAY</span>
+                        <h2>Attendance Summary</h2>
+                    </div>
+
+                    <a href="attendence.html">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div class="teacher-attendance-summary">
+
+                    <div class="attendance-circle">
+                        <strong>90%</strong>
+                        <span>Present</span>
+                    </div>
+
+
+                    <div class="attendance-details">
+
+                        <div>
+                            <span>Present</span>
+                            <strong class="attendance-present">38 Students</strong>
+                        </div>
+
+                        <div>
+                            <span>Absent</span>
+                            <strong class="attendance-absent">4 Students</strong>
+                        </div>
+
+                        <div>
+                            <span>Total</span>
+                            <strong>0 Students</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT ISSUES -->
+
+            <div class="teacher-card">
+
+                <div class="teacher-card-heading">
+
+                    <div>
+                        <span>ATTENTION</span>
+                        <h2>Recent Issues</h2>
+                    </div>
+
+                    <a href="issues.html">
+                        View All →
+                    </a>
+
+                </div>
+
+
+                <div class="teacher-issue-list">
+
+                    <div class="teacher-issue">
+
+                        <div class="issue-dot"></div>
+
+                        <div>
+                            <strong>Student Issue</strong>
+                            <p>Needs attention from parent.</p>
+                        </div>
+
+                        <span>Today</span>
+
+                    </div>
+
+
+                    <div class="teacher-issue">
+
+                        <div class="issue-dot"></div>
+
+                        <div>
+                            <strong>Attendance Alert</strong>
+                            <p>Repeated absence recorded.</p>
+                        </div>
+
+                        <span>Yesterday</span>
+
+                    </div>
+
+
+                    <div class="teacher-issue">
+
+                        <div class="issue-dot"></div>
+
+                        <div>
+                            <strong>Parent Message</strong>
+                            <p>New parent communication.</p>
+                        </div>
+
+                        <span>Yesterday</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- NOTICE -->
+
+        <div class="teacher-note">
+
+            <div class="teacher-note-icon">
+                💡
+            </div>
+
+            <div>
+                <strong>Teacher Reminder</strong>
+
+                <p>
+                    Please complete today's attendance before leaving school
+                    and report any student concerns through the Student Issues section.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="teacher-footer">
+        © 2026 Global Kids. All Rights Reserved.
+    </footer>
+
+</main>
+
+
+<script>
+
+function showNotifications() {
+    alert(
+        "Notifications\n\n" +
+        "• 2 students have attendance alerts.\n" +
+        "• 1 new parent message.\n" +
+        "• Staff meeting reminder."
+    );
+}
+
+</script>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>
